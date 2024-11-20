@@ -2,12 +2,15 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe('your-publishable-key'); // Replace with your actual Stripe publishable key
 
 const pricingPlans = [
   {
     name: "Free",
     price: "0",
+    priceId: "price_free", // Replace with your actual Stripe price ID
     description: "Perfect for getting started",
     features: [
       "Basic study materials",
@@ -19,6 +22,7 @@ const pricingPlans = [
   {
     name: "Pro",
     price: "29",
+    priceId: "price_pro", // Replace with your actual Stripe price ID
     description: "Best for serious learners",
     popular: true,
     features: [
@@ -33,6 +37,7 @@ const pricingPlans = [
   {
     name: "Enterprise",
     price: "99",
+    priceId: "price_enterprise", // Replace with your actual Stripe price ID
     description: "For teams and organizations",
     features: [
       "All Pro features",
@@ -46,7 +51,33 @@ const pricingPlans = [
 ];
 
 const Pricing = () => {
-  const navigate = useNavigate();
+  const handleGetStarted = async (priceId: string) => {
+    const stripe = await stripePromise;
+    
+    if (!stripe) return;
+
+    // Create a checkout session on your backend
+    const response = await fetch('/api/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        priceId,
+      }),
+    });
+
+    const session = await response.json();
+
+    // Redirect to Stripe checkout
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+
+    if (result.error) {
+      console.error(result.error);
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -100,7 +131,7 @@ const Pricing = () => {
                         ? "bg-[#8B5CF6] hover:bg-[#7B4CE6]" 
                         : "bg-neutral-800 hover:bg-neutral-700"
                     }`}
-                    onClick={() => navigate("/signup")}
+                    onClick={() => handleGetStarted(plan.priceId)}
                   >
                     Get Started
                   </Button>
