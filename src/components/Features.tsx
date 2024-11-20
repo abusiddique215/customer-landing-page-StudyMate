@@ -1,46 +1,56 @@
-import { Check, CreditCard, BarChart, Globe, Clock } from "lucide-react";
+import { BookOpen, Users, BarChart2, MessageSquare, Clock, Shield } from "lucide-react";
 
 const features = [
   {
-    title: "Simple Checkout",
-    description: "Streamlined checkout process optimized for conversion and user experience.",
-    icon: CreditCard,
+    title: "Progress Tracking",
+    description: "Monitor your learning journey with detailed analytics and insights.",
+    icon: BarChart2,
   },
   {
-    title: "Recurring Billing",
-    description: "Automated billing system for subscriptions and recurring payments.",
+    title: "AI Chat Assistant",
+    description: "Get instant help and explanations from our AI tutor.",
+    icon: MessageSquare,
+  },
+  {
+    title: "Study Timer",
+    description: "Stay focused with Pomodoro timer and break reminders.",
     icon: Clock,
   },
   {
-    title: "Global Payments",
-    description: "Accept payments from customers anywhere in the world.",
-    icon: Globe,
+    title: "Collaboration",
+    description: "Connect with other learners and form study groups.",
+    icon: Users,
   },
   {
-    title: "Detailed Analytics",
-    description: "Get insights into your business with comprehensive reporting.",
-    icon: BarChart,
+    title: "Resource Library",
+    description: "Access a vast collection of study materials and guides.",
+    icon: BookOpen,
+  },
+  {
+    title: "Plagiarism Check",
+    description: "Ensure originality in your work with our checker.",
+    icon: Shield,
   },
 ];
 
 const Features = () => {
   return (
-    <section id="features" className="py-16 container-padding">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Everything You Need to Run & Grow Your Business
+    <section id="features" className="py-16 container-padding bg-white">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#1A1A1A]">
+          Everything You Need to Excel
         </h2>
         <p className="text-neutral-600 text-center mb-12 max-w-2xl mx-auto">
-          All the tools and features you need to accept payments, manage subscriptions, and scale your business globally.
+          Comprehensive tools and features designed to support your self-learning journey.
         </p>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="glass-card p-8 rounded-xl">
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-neutral-100 hover:shadow-xl transition-shadow">
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-accent/10 p-3 rounded-lg">
-                  <feature.icon className="w-6 h-6 text-accent" />
+                <div className="bg-[#8B5CF6]/10 p-3 rounded-xl">
+                  <feature.icon className="w-6 h-6 text-[#8B5CF6]" />
                 </div>
-                <h3 className="font-semibold text-xl">{feature.title}</h3>
+                <h3 className="font-semibold text-xl text-[#1A1A1A]">{feature.title}</h3>
               </div>
               <p className="text-neutral-600">{feature.description}</p>
             </div>
