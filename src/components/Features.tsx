@@ -35,22 +35,22 @@ const features = [
 
 const Features = () => {
   return (
-    <section id="features" className="py-16 container-padding bg-white">
+    <section id="features" className="py-12 container-padding bg-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#1A1A1A]">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 text-[#1A1A1A]">
           Everything You Need to Excel
         </h2>
-        <p className="text-neutral-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-neutral-600 text-center mb-8 max-w-2xl mx-auto">
           Comprehensive tools and features designed to support your self-learning journey.
         </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-neutral-100 hover:shadow-xl transition-shadow">
-              <div className="flex items-center gap-3 mb-4">
+            <div key={index} className="bg-white p-6 rounded-2xl shadow-lg border border-neutral-100 hover:shadow-xl transition-shadow">
+              <div className="flex items-center gap-3 mb-3">
                 <div className="bg-[#8B5CF6]/10 p-3 rounded-xl">
                   <feature.icon className="w-6 h-6 text-[#8B5CF6]" />
                 </div>
-                <h3 className="font-semibold text-xl text-[#1A1A1A]">{feature.title}</h3>
+                <h3 className="font-display font-semibold text-xl text-[#1A1A1A]">{feature.title}</h3>
               </div>
               <p className="text-neutral-600">{feature.description}</p>
             </div>

@@ -33,25 +33,25 @@ const resources = [
 
 const Resources = () => {
   return (
-    <section className="py-16 container-padding bg-gradient-to-br from-[#8B5CF6]/5 to-transparent">
+    <section className="py-12 container-padding bg-gradient-to-br from-[#8B5CF6]/5 to-transparent">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 font-display">
           Comprehensive Study Resources
         </h2>
-        <p className="text-neutral-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-neutral-600 text-center mb-8 max-w-2xl mx-auto">
           Everything you need to succeed in your self-learning journey, all in one place.
         </p>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {resources.map((resource, index) => (
             <div 
               key={index} 
-              className="glass-card p-8 rounded-2xl hover:shadow-lg transition-shadow cursor-pointer group"
+              className="glass-card p-6 rounded-2xl hover:shadow-lg transition-shadow cursor-pointer group"
             >
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-4 mb-3">
                 <div className={`${resource.color} p-3 rounded-xl group-hover:scale-110 transition-transform`}>
                   <resource.icon className={`w-6 h-6 ${resource.iconColor}`} />
                 </div>
-                <h3 className="font-semibold text-xl">{resource.title}</h3>
+                <h3 className="font-display font-semibold text-xl">{resource.title}</h3>
               </div>
               <p className="text-neutral-600">{resource.description}</p>
             </div>
