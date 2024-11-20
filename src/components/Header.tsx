@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,9 +8,9 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#8B5CF6]/90 backdrop-blur-lg border-b border-white/10">
       <nav className="container-padding mx-auto flex h-16 items-center justify-between">
-        <a href="/" className="text-xl font-semibold text-white flex items-center gap-2">
+        <Link to="/" className="text-xl font-semibold text-white flex items-center gap-2">
           <span className="text-2xl">📚</span> StudyMate
-        </a>
+        </Link>
         
         <div className="hidden md:flex items-center gap-8">
           <a href="#features" className="text-white/80 hover:text-white transition-colors">
@@ -18,9 +19,9 @@ const Header = () => {
           <a href="#testimonials" className="text-white/80 hover:text-white transition-colors">
             Reviews
           </a>
-          <a href="#pricing" className="text-white/80 hover:text-white transition-colors">
+          <Link to="/pricing" className="text-white/80 hover:text-white transition-colors">
             Pricing
-          </a>
+          </Link>
           <button className="bg-white text-[#8B5CF6] px-6 py-2 rounded-full hover:bg-white/90 transition-colors font-medium">
             Get Started
           </button>
@@ -43,9 +44,9 @@ const Header = () => {
             <a href="#testimonials" className="text-white/80 hover:text-white transition-colors">
               Reviews
             </a>
-            <a href="#pricing" className="text-white/80 hover:text-white transition-colors">
+            <Link to="/pricing" className="text-white/80 hover:text-white transition-colors">
               Pricing
-            </a>
+            </Link>
             <button className="bg-white text-[#8B5CF6] px-6 py-2 rounded-full hover:bg-white/90 transition-colors font-medium">
               Get Started
             </button>
