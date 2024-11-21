@@ -4,13 +4,13 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe('your-publishable-key'); // Replace with your actual Stripe publishable key
+const stripePromise = loadStripe('your-publishable-key');
 
 const pricingPlans = [
   {
     name: "Free",
     price: "0",
-    priceId: "price_free", // Replace with your actual Stripe price ID
+    priceId: "price_free",
     description: "Perfect for getting started",
     features: [
       "Basic study materials",
@@ -22,7 +22,7 @@ const pricingPlans = [
   {
     name: "Pro",
     price: "29",
-    priceId: "price_pro", // Replace with your actual Stripe price ID
+    priceId: "price_pro",
     description: "Best for serious learners",
     popular: true,
     features: [
@@ -37,7 +37,7 @@ const pricingPlans = [
   {
     name: "Enterprise",
     price: "99",
-    priceId: "price_enterprise", // Replace with your actual Stripe price ID
+    priceId: "price_enterprise",
     description: "For teams and organizations",
     features: [
       "All Pro features",
@@ -53,9 +53,7 @@ const pricingPlans = [
 const Pricing = () => {
   const handleGetStarted = async (priceId: string) => {
     const stripe = await stripePromise;
-    
     if (!stripe) return;
-
     // Create a checkout session on your backend
     const response = await fetch('/api/create-checkout-session', {
       method: 'POST',
@@ -129,8 +127,8 @@ const Pricing = () => {
                     className={`w-full ${
                       plan.popular 
                         ? "bg-[#8B5CF6] hover:bg-[#7B4CE6]" 
-                        : "bg-neutral-800 hover:bg-neutral-700"
-                    }`}
+                        : "bg-[#1A1F2C] hover:bg-[#2A2F3C]"
+                    } text-white`}
                     onClick={() => handleGetStarted(plan.priceId)}
                   >
                     Get Started
