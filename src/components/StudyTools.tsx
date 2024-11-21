@@ -2,7 +2,7 @@ import {
   Timer, 
   BookMarked, 
   PenTool, 
-  Flashcard, 
+  BookOpen, 
   Calendar, 
   LineChart 
 } from "lucide-react";
@@ -25,7 +25,7 @@ const tools = [
     description: "Take rich notes with our markdown editor"
   },
   {
-    icon: Flashcard,
+    icon: BookOpen,
     title: "Flashcards",
     description: "Create and study with AI-powered flashcards"
   },
