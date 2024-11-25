@@ -1,19 +1,19 @@
 const stats = [
   {
-    value: "50k+",
-    label: "Active Students",
+    value: "10k+",
+    label: "Beta Users",
   },
   {
-    value: "95%",
-    label: "Success Rate",
+    value: "98%",
+    label: "User Satisfaction",
   },
   {
-    value: "24/7",
-    label: "AI Support",
+    value: "2x",
+    label: "Learning Speed",
   },
   {
-    value: "100+",
-    label: "Study Resources",
+    value: "50+",
+    label: "Learning Paths",
   },
 ];
 
